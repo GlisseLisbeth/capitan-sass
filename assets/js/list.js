@@ -1,14 +1,14 @@
 "use strict";
 const render = (root)=>{
 	root.empty();
-	state.forEach((name)=> {
-    const list = $('<li>'+ name +'<input type="checkbox"> </li>');
+	state.students.forEach((student,index)=> {
+    const list = $('<li>'+ state.students[index].name +'<input type="checkbox"> </li>');
     root.append(list);
   })
 }
 
 const state = {
-	name:null
+	students:null
 };
 
 $(_=>{
@@ -16,8 +16,7 @@ $(_=>{
 		if (error){
 			return alert(error.message);
 		}
-		console.log(json);
-		state.name = json.name;
+		state.students = json;
 		const root = $("#root");
 		render(root);
 	});
