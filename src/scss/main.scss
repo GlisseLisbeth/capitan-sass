@@ -1,0 +1,52 @@
+@import 'colors';
+@import 'fonts';
+@import 'resolutions';
+
+body {
+  margin: 0 auto;
+  width: calc-container();
+  font-family:  $fonts;
+  font-style: $font-style;
+
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+
+#header, #footer {
+  float: left;
+  margin: 0 calc-gutter(map-get($grid, margen));
+  width: calc-col(12);
+}
+
+#content>div:nth-child(1) {
+  float: left;
+  margin: 0 calc-gutter(map-get($grid, margen));
+  width: calc-col(3);
+}
+
+#content>div:nth-child(2) {
+  float: left;
+  margin: 0 calc-gutter(map-get($grid, margen));
+  width: calc-col(9);
+}
+
+#header, #content>div:nth-child(1)>ul>li:last-child {
+  background: $light-garden;
+  color: $default-font-color;
+}
+
+#content>div:nth-child(1)>ul>li, #content>div:nth-child(3)>.aside, #footer{
+  background: $light-gray;
+  color: $default-font-color;
+  margin: 2px;
+}
+
+
+div:nth-child(3) .aside, div:nth-child(4) {
+  float: left;
+  margin: 0 calc-gutter(map-get($grid, margen));
+  width: calc-col(12);
+}
